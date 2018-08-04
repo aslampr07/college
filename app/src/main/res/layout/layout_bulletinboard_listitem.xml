@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_margin="5dp"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        >
+
+        <View
+            android:id="@+id/Home_BulletinBoard_item_thumbnail"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/Home_BulletinBoard_item_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is heading"
+            android:textSize="18sp"
+            android:textColor="#B20000"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintLeft_toRightOf="@id/Home_BulletinBoard_item_thumbnail"
+            app:layout_constraintTop_toTopOf="@id/Home_BulletinBoard_item_thumbnail"
+            />
+        <TextView
+            android:id="@+id/Home_BulletinBoard_item_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is body"
+            app:layout_constraintBottom_toBottomOf="@id/Home_BulletinBoard_item_thumbnail"
+            app:layout_constraintLeft_toLeftOf="@id/Home_BulletinBoard_item_head"
+            />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
