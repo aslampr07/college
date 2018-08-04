@@ -21,8 +21,6 @@ class HomeBannerViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapte
         return bannerFragment
     }
 
-    override fun getCount(): Int {
-        return images.size
-    }
+    override fun getCount() = images.size
 
 }
