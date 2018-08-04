@@ -6,10 +6,12 @@
     tools:context=".fragments.BannerFragment">
 
     <ImageView
+        android:id="@+id/Home_BannerImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/college1"
         android:scaleType="centerCrop"
+        android:elevation="4dp"
         />
 
 </FrameLayout>
