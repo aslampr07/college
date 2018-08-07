@@ -2,12 +2,18 @@ package com.company.aslam.college.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
+import android.util.Log
+import android.view.View
+import android.widget.Button
 import android.widget.TableLayout
+import android.widget.Toast
 import com.company.aslam.college.R
 import com.company.aslam.college.adapter.BulletinBoardAdapter
 import com.company.aslam.college.adapter.HomeBannerViewPagerAdapter
@@ -36,5 +42,18 @@ class MainActivity : AppCompatActivity() {
         }
         bulletinRecycler.layoutManager = LinearLayoutManager(this)
         bulletinRecycler.adapter = BulletinBoardAdapter(bulletinList)
+
+        //For auto-scrolling the banner.
+        val bannerThread = Thread{
+            while (true){
+                Thread.sleep(5000)
+                Handler(Looper.getMainLooper()).post{
+                    bannerPager.currentItem = (bannerPager.currentItem + 1) % 3
+                }
+            }
+        }
+        bannerThread.start()
+
+
     }
 }
